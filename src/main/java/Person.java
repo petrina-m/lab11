@@ -1,22 +1,22 @@
 public class Person {
-    private String firstname;
-    private String lastname;
+    private String name;
     private int age;
     int id;
+    static int LastId=0;
 
-    public Person(String firstname, String lastname, int age) {
-        this.firstname = firstname;
-        this.lastname=lastname;
+    public Person(String name, int age) {
+        this.name = name;
         this.age=age;
+        LastId++;
+        id=LastId;
+    }
+    public Person(int id, String name)
+    {
+        this.id=id;
+        this.name=name;
     }
 
-    public String getLastname() {
-        return lastname;
-    }
 
-    public String getFirstname() {
-        return firstname;
-    }
 
     public int getAge() {
         return age;
@@ -26,4 +26,11 @@ public class Person {
         return id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
